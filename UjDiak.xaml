@@ -1,0 +1,60 @@
+﻿<Window x:Class="felveteli.UjDiak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:felveteli"
+        mc:Ignorable="d"
+        Title="UjDiak" Height="450" Width="800">
+ <Viewbox>
+<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnBezar" Grid.Row="0" Grid.Column="1" Margin="5" Click="btnBezar_Click">Bezár</Button>
+        
+        <Button x:Name="btnBekuld" Grid.Row="0" Grid.Column="0" Margin="5" Click="btnBekuld_Click">Beküld</Button>
+
+        <Label Content="OMAzonosító:" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtOM" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        
+        <Label Content="A tanuló neve::" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtNev" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        
+        <Label Content="A tanuló értesítési címe:" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtErtesites" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        
+        <Label Content="A tanuló születési dátuma:" Grid.Row="4" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <DatePicker x:Name="dpSzuletesi" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></DatePicker>
+        
+        <Label Content="A tanuló email címe:" Grid.Row="5" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtEmail" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        
+        <Label Content="A tanuló matek pontszáma:" Grid.Row="6" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtMatek" Grid.Row="6" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        
+        <Label Content="A tanuló magyar pontszáma:" Grid.Row="7" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtMagyar" Grid.Row="7" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+        
+        
+    </Grid>
+    </Viewbox>
+</Window>
