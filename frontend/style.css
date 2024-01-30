@@ -1,0 +1,123 @@
+body{
+    color: white;
+}
+
+button{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+#container {
+    margin-top: 10px;
+}
+
+#students {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+#sort, #OM_Azon{
+    margin: 10px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #077ebe;
+}
+
+tr:nth-child(odd) {
+    background-color: #0f3a52;
+}
+
+
+nav {
+    margin: 0px auto 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 230px;
+    height: 50px;
+    background-color: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+  }
+  nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+  }
+  a:nth-child(1) {
+    width: 100px;
+  }
+  a:nth-child(2) {
+    width: 120px;
+  } 
+  nav .start-home, a:nth-child(1):hover~.animation {
+    width: 100px;
+    left: 0px;
+    background-color: #1abc9c;
+  }
+  nav .start-about, a:nth-child(2):hover~.animation {
+    width: 130px;
+    left: 100px;
+    background-color: #e74c3c;
+  }
+
+  
+  body {
+    font-size: 12px;
+    font-family: sans-serif;
+    background: #2c3e50;
+  }
+  h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'Cherry Swash', cursive;
+  }
+  
+  p {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: #ecf0f1;
+      font-family: 'Cherry Swash',cursive;
+      font-size: 16px;
+  }
+  
+  span {
+      color: #2BD6B4;
+  }
