@@ -182,10 +182,18 @@ let adatok = [
 ]
 
 function findOM() {
-    let OMAzon = document.getElementById("OM_Azon");
+    let OMAzon = document.getElementById("OM_Azon").value;
+    if (OMAzon.length != 11) {
+        alert("Az OM Azonosítónak 11 szám hosszúnak kell lennie!")
+        return;
+    }
+    else if(OMAzon[0] != 7){
+        alert("Minden OM Azonosító 7-el kezdődik");
+        return;
+    }
     let diakFound = false;
     adatok.forEach(element => {
-        if (element.OM_Azonosito == OMAzon.value) {
+        if (element.OM_Azonosito == OMAzon) {
             let table = document.getElementById("students");
             let firstRow = document.getElementById("firstRow");
             table.innerHTML = "";

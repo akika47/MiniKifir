@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>OMKereso</title>
+    <title>MiniKifir</title>
 </head>
 <body>
     <nav>
@@ -15,10 +15,10 @@
         <div class="animation start-home"></div>
 
     </nav>
-
-    <label for="OM_Azon">OM Azonosító: </label>
-    <input type="number" id="OM_Azon" pattern="[0-9]" minlength="11" maxlength="11" required>
-    <button type="button" onclick="findOM()">Megjelenít</button>
+    
+    <label for="sort">Összpontszám minimum: </label>
+    <input type="number" id="sort">
+    <button type="button" onclick="sortList()">Megjelenít</button>
     <div id="container">
         <table id="students">
             <tr id="firstRow">
@@ -30,6 +30,6 @@
             </tr>
         </table>
     </div>
-    <script src="OmKereso.js"></script>
+    <script src="SortingFejlesztes.js"></script>
 </body>
 </html>
