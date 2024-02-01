@@ -183,20 +183,16 @@ let adatok = [
   
 
 
-function sortList(){
+  function sortList(){
     let sortingMinimum = parseInt(document.getElementById("sort").value);
     if (sortingMinimum < 0) {
         alert("Nem lehet minusz szám!")
         return;
     }
     let db = 0;
-    let osszPont = [];
-    let filteredData = [];
-    for (let i = 0; i < adatok.length; i++) {
-        osszPont.push(adatok[i].Matematika+adatok[i].Matematika);
 
-        
-    }
+    let filteredData = [];
+
     
     adatok.forEach(student => {
         if (student.Matematika+student.Magyar >= sortingMinimum) {
@@ -205,16 +201,18 @@ function sortList(){
 
 
     })
-    for (let i = 0; i < osszPont.length; i++) {
+    for (let i = 0; i < filteredData.length; i++) {
 
-        if(osszPont[i] >= sortingMinimum){
+        if(filteredData[i].Matematika + filteredData[i].Magyar >= sortingMinimum){
             db+=1
         }
         
     }
+    alert(db);
     createTable(db, filteredData)
 
 }
+
 
 function createTable(amountOfRows, filteredStudents){
 
