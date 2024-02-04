@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:felveteli"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800">
+<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -18,14 +18,18 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid Name="Dg_Students" Grid.RowSpan="5" Background="Coral" BorderBrush="Black" BorderThickness="3" SelectionMode="Extended"></DataGrid>
+        <DataGrid Name="Dg_Students" Grid.RowSpan="7" Background="Coral" BorderBrush="Black" BorderThickness="3" SelectionMode="Extended"></DataGrid>
 
         <Button Grid.Column="2" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Click="Button_Click" Content="Új Diák"/>
         <Button Name="btnDelete" Grid.Column="2" Grid.Row="1" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Content="Törlés" Click="btnDelete_Click"/>
         <Button Name="btnExport" Grid.Column="2" Grid.Row="2" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Content="Export" Click="btnExport_Click"/>
         <Button Name="btnImport" Grid.Column="2" Grid.Row="3" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Content="Import" Click="btnImport_Click"/>
         <Button Name="btnModify" Grid.Column="2" Grid.Row="4" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Content="Módosít" Click="btnModify_Click"></Button>
+        <Button Name="btnExportSql" Grid.Column="2" Grid.Row="5" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Content="Export(SQL)" Click="btnExportSql_Click" ></Button>
+        <Button Name="btnImportSql" Grid.Column="2" Grid.Row="6" Width="100" Height="30" HorizontalAlignment="Center" Margin="10" Content="Import(SQL)" Click="btnImportSql_Click" ></Button>
     </Grid>
 </Window>

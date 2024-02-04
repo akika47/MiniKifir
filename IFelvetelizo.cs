@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace felveteli
 {
-    public interface IFelvetelizo
-    {
+	public interface IFelvetelizo
+	{
 
-        String OM_Azonosito { get; set; }
-        String Neve { get; set; }
-        String ErtesitesiCime { get; set; }
-        String Email { get; set; }
-        DateTime SzuletesiDatum { get; set; }
-        int Matematika { get; set; }
-        int Magyar { get; set; }
+		String OM_Azonosito { get; set; }
+		String Neve { get; set; }
+		String ErtesitesiCime { get; set; }
+		String Email { get; set; }
+		DateTime SzuletesiDatum { get; set; }
+		int Matematika { get; set; }
+		int Magyar { get; set; }
 
-        String CSVSortAdVissza();
+		String CSVSortAdVissza();
 
-        void ModositCSVSorral(String csvString);
-    }
+		void ModositCSVSorral(String csvString);
+	}
 }
