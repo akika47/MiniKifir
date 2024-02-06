@@ -256,9 +256,9 @@ function createTable(amountOfRows, filteredStudents){
             magyarAtlag += element.Magyar;
             osszAtlag += element.Matematika + element.Magyar;
         });
-        matekAtlag = matekAtlag / filteredStudents.length;
-        magyarAtlag = magyarAtlag / filteredStudents.length;
-        osszAtlag = osszAtlag / filteredStudents.length;
+        matekAtlag = Math.round(matekAtlag / filteredStudents.length *10)/10;
+        magyarAtlag = Math.round(magyarAtlag / filteredStudents.length*10)/10;
+        osszAtlag = Math.round(osszAtlag / filteredStudents.length*10)/10;
         cell1.innerText = "Átlagok:";
         cell1.style.width = "51.3%";
         cell2.innerText = matekAtlag; 
@@ -269,8 +269,10 @@ function createTable(amountOfRows, filteredStudents){
     }
 
 
-
 }
+
+
+
 
 const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 

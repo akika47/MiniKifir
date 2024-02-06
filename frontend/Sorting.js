@@ -208,7 +208,6 @@ let adatok = [
         }
         
     }
-    alert(db);
     createTable(db, filteredData)
 
 }

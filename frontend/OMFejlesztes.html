@@ -17,8 +17,8 @@
     </nav>
 
     <label for="OM_Azon">OM Azonosító: </label>
-    <input type="number" id="OM_Azon">
-    <button type="button" onclick="findOM()">Megjelenít</button>
+    <input type="number" id="OM_Azon" oninput="findOM()">
+    <p><b>Találatok száma:</b> <span id="talszam"></span></p>
     <div id="container">
         <table id="students">
             <tr id="firstRow">
@@ -28,6 +28,8 @@
                 <th>Magyar</th>
                 <th>Összpont</th>
             </tr>
+        </table>
+        <table id="atlagok">
         </table>
     </div>
     <script src="OMFejlesztes.js"></script>

@@ -9,6 +9,15 @@ let adatok = [
         "Magyar": 35
     },
     {
+        "OM_Azonosito": "78655218935",
+        "Neve": "Szabó Jani",
+        "ErtesitesiCime": "Budapest, Gellért tér 15.",
+        "Email": "anna@example.com",
+        "SzuletesiDatum": "1998-07-19T00:00:00",
+        "Matematika": 18,
+        "Magyar": 36
+    },
+    {
         "OM_Azonosito": "15963702584",
         "Neve": "Nagy Zsófia",
         "ErtesitesiCime": "Debrecen, Szent István utca 8.",
@@ -181,44 +190,96 @@ let adatok = [
     }
 ]
 
+let talszam = document.getElementById("talszam");
+
 function findOM() {
     let OMAzon = document.getElementById("OM_Azon").value;
-    if (OMAzon.length != 11) {
-        alert("Az OM Azonosítónak 11 szám hosszúnak kell lennie!")
-        return;
-    }
-    let diakFound = false;
+    let db = 0;
+    let filteredData = [];
     adatok.forEach(element => {
-        if (element.OM_Azonosito == OMAzon) {
-            let table = document.getElementById("students");
-            let firstRow = document.getElementById("firstRow");
-            table.innerHTML = "";
-            table.appendChild(firstRow);
-
-            let row = document.createElement("tr");
-
-
-            let cell1 = row.insertCell(0);
-            let cell2 = row.insertCell(1);
-            let cell3 = row.insertCell(2);
-            let cell4 = row.insertCell(3);
-            let cell5 = row.insertCell(4);
-
-            cell1.innerText = element.OM_Azonosito;
-            cell2.innerText = element.Neve;
-            cell3.innerText = element.Matematika;
-            cell4.innerText = element.Magyar;
-            cell5.innerText = element.Matematika + element.Magyar;
-
-            table.appendChild(row);
-            diakFound = true;
-
+        if (element.OM_Azonosito.startsWith(OMAzon)) {
+            db += 1;
+        }
+    }
+    )
+    talszam.innerText = db;
+    adatok.forEach(element => {
+        if (element.OM_Azonosito.startsWith(OMAzon)) {
+            filteredData.push(element);
         }
 
 
     })
+    let table = document.getElementById("students");
+    let firstRow = document.getElementById("firstRow");
+    table.innerHTML = "";
+    table.appendChild(firstRow);
+    
 
-    if(diakFound == false){
-        alert("Nincs ilyen OM Azonosítóval rendelkező diák!")
+
+    for (let i = 0; i < db; i++) {
+        let row = table.insertRow();
+
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
+        let cell5 = row.insertCell(4);
+
+        cell1.innerText = filteredData[i].OM_Azonosito;
+        cell2.innerText = filteredData[i].Neve;
+        cell3.innerText = filteredData[i].Matematika;
+        cell4.innerText = filteredData[i].Magyar;
+        cell5.innerText = filteredData[i].Matematika + filteredData[i].Magyar;
+
+        table.appendChild(row);
+
+        let tableAtlag = document.getElementById("atlagok");
+        tableAtlag.innerHTML = "";
+        let lastRow = tableAtlag.insertRow();
+        if (db > 0) {
+            let cell1 = lastRow.insertCell(0);
+            let cell2 = lastRow.insertCell(1);
+            let cell3 = lastRow.insertCell(2);
+            let cell4 = lastRow.insertCell(3);
+
+            let magyarAtlag = 0;
+            let matekAtlag = 0;
+            let osszAtlag = 0;
+
+            filteredData.forEach(element => {
+                matekAtlag += element.Matematika;
+                magyarAtlag += element.Magyar;
+                osszAtlag += element.Matematika + element.Magyar;
+            });
+    
+            matekAtlag = Math.round(matekAtlag / filteredData.length *10)/10;
+            magyarAtlag = Math.round(magyarAtlag / filteredData.length*10)/10;
+            osszAtlag = Math.round(osszAtlag / filteredData.length*10)/10;
+            cell1.innerText = "Átlagok:";
+            cell1.style.width = "51.3%";
+            cell2.innerText = matekAtlag;
+            cell2.style.width = "13.7%"
+            cell3.innerText = magyarAtlag;
+            cell3.style.width = "15.8%"
+            cell4.innerText = osszAtlag;
+        }
+
     }
-};
+}
+
+
+
+
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+
+const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+)(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr));
+})));
