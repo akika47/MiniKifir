@@ -7,7 +7,7 @@
     <title>MiniKifir</title>
 </head>
 <body>
-    <nav>
+    <nav id="menu">
         <a href="sorting.html">Sorting</a>
         <a href="OMAzonosito.html">OM</a>
         <a href="SortingFejlesztes.html">Sorting2</a>
@@ -19,7 +19,8 @@
     <label for="sort">Összpontszám minimum: </label>
     <input type="number" id="sort">
     <button type="button" onclick="sortList()">Megjelenít</button>
-    <div id="container">
+    <button id="btnExport" type="button" onclick="tableToCSV()">CSV Export</button>
+    <div id="container" style="overflow-x:auto;">
         <table id="students">
             <tr id="firstRow">
                 <th>OM</th>
